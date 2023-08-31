@@ -34,6 +34,28 @@
              Cette classe devra étendre la classe AbstractController, ce qui lui donnera 2 méthodes : builForm() et configureOptions().
             <br>
           </p>
+          <h2>buildForm()</h2>
+          <p>
+            buildForm() dispose d'un constructeur de formiulaires "$buider = nom de variable donné par défaut" qui est un objet "FormBuilderInterface". <br>
+            $builder possede donc quelques méthodes dont une indisponsable qui est " add() ". <br>
+            la méthode "add()" va permettre d'ajouter tous les champs que l'on souhaite avoir dans  le formulaire. pPour cela , il faudra mettre en premier parametre le nom du champ et son type.
+          </p>
+          <pre>
+            class CommentType extends AbstractType
+            {
+            public function buildForm(FormBuildderInterface $builder, array $options)
+            {
+              $builder
+                  ->add('title', TextType::class)
+                  ->add('content', TextareaType::class)
+              ;
+            
+            }
+            }
+          </pre>
+          <p>
+            la clase CommentType possède la méthode builForm() dans l'exemple ci dessus. ONn constate également la présence de $builder qui a pour méthode add() avec "title" qui est typé en TextType et "cnotent" qui est typé en TextareaType.
+          </p>
 
         </div>
       </div>
