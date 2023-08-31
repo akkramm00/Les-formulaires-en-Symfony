@@ -30,7 +30,9 @@
 
     <h2>Type de formulaire et type de champs</h2>
           <p>
-            Un "type" de formulaire est une classe PHP.il permet de construire un formulaire et de définir les différents types de champs.Cette classe ,si vous utilisez les outils de Symfony comme makerBundle, sera créeée dans le dossier Form et portera par convention le nom de l'entité suivi du mot "Type".
+            Un "type" de formulaire est une classe PHP.il permet de construire un formulaire et de définir les différents types de champs.Cette classe ,si vous utilisez les outils de Symfony comme makerBundle, sera créée dans le dossier Form et portera par convention le nom de l'entité suivi du mot "Type".Auinsi un formulaire pour une entité User se nommera "UserType" et aura le chemin d'accès: App\Form\UserType. <br> 
+             Cette classe devra étendre la classe AbstractController, ce qui lui donnera 2 méthodes : builForm() et configureOptions().
+            <br>
           </p>
 
         </div>
