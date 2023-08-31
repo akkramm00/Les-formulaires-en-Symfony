@@ -66,6 +66,23 @@
             </ul>
           </p>
 
+          <h2>Exemple </h2>
+          <pre>
+            class CommentType extends AbstractType
+            {
+            public function buildForm(FormBuildderInterface $builder, array $options)
+            {
+              $builder
+                  ->add('title', TextType::class, [
+                    
+                  ])
+                  ->add('content', TextareaType::class)
+              ;
+            
+            }
+            }
+          </pre>
+
         </div>
       </div>
     </main>
