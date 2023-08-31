@@ -111,6 +111,12 @@
            <h1>La gestion du formulaire dans le contrôlelur et son affichage</h1>
           <p>
             Le controleur joue un role clé dans l'architecture MVC(MOdel-Vue-Controller)de symfony. il va envoyer à la vue le formulaire et va ensuite traiter les informations recueillis lors de la soumisson, du formulaire de l'utilisateur. Découvrons le fonctionnement du controleur, avec quelques exemples de sa gestion d'un formulaire, ainsi que les différentes façons d'utiliser la vue du formulaire dans un fichier twig.
+          </p><br>
+
+          <h2>CreateFormBuilder</h2>
+          <p>
+            Nous avons vu qu'une bonne pratique était de créer un formulaire à part sous forme de Type.<br>
+            D'ailleurs, si vous utilisez MakerBundle pour la création d'une entité, il vous le dréera automatiquement à partir des propriétés de l'entié que vous venez de crér. Mais , il est possible de créer un formulaire directement dans le controleur grace à la méthode que fournit AbstractControllet: createFormBuilder().
           </p>
           
         </div>
