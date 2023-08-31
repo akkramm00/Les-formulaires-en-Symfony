@@ -118,6 +118,42 @@
             Nous avons vu qu'une bonne pratique était de créer un formulaire à part sous forme de Type.<br>
             D'ailleurs, si vous utilisez MakerBundle pour la création d'une entité, il vous le dréera automatiquement à partir des propriétés de l'entié que vous venez de crér. Mais , il est possible de créer un formulaire directement dans le controleur grace à la méthode que fournit AbstractControllet: createFormBuilder().
           </p>
+          <pre>
+            #[Route('/new', name: 'app_comment_new', methods['GET', 'POST'])]
+            public function new(rRequest $request): Response
+            {
+              $comment = new Comment();
+                $form = $this->createFormBuilder($comment)
+                    ->add('title', TextType::class, [
+                        'attr' => [
+                            'class' => 'form-control mt-3 mb-3'
+                        ],
+                    ]
+            )
+                    -> add('content', TextareaType::class, [
+                        'attr' => [
+                            'class' => 'form-control mt-3 mb-3',
+                        ],
+                        'label' => 'Commentaire',
+                        'required' => true
+                    ])
+              ->getForm();
+            //...
+            }
+          </pre>
+          <br><br>
+          <p>
+            Dans l'exemple ci-dessus, nous contatons que créer un formulaire directement dans le controleur ressemble beaucoup à la foçon de créer un formulaire Type. Nous avnos remplacé la méthode =Build par $form. ette dernière  appelle la méthodecreatteFormBuilder(), qui a en paramètre l'entité voulue. Par la suite , la méthode add() se comporte comme avec BuildForm(). Enfin avant de clôturer, il faut appeler la méthode getForm().
+            <br><br>
+
+            N'oubliez pas d'impôrter toutes les classes qui sont utilisées, telles que TextType, TextareaType, et Comment.
+          </p>
+          <br><br>
+
+          <h2>Formulaire de rendu</h2>
+          <p>
+            Maintenant , nous voulons que notre application affiche le formulaire. Dans l'exemple ci-dssous, nous mettons dans la variable $form le formuylaire en appelant la méthode creatForm() dans laquelle on passe en argument CommentType. Attention à ne pas oublier de l'importer avec autoloader .         
+          </p>
           
         </div>
       </div>
