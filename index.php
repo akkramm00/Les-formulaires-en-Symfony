@@ -171,6 +171,19 @@
           <p>
             C'est la méthode render() qui va appeler le fichier Twig, qui représente la Vue dans le MVC et qui va  lui transmettre les données voulues, ici le formulaire $form. 
           </p>
+          <br><br>
+          <h2>La vue</h2>
+          <p>
+            Le fichier "comment.html.twig" , à present qu'il a recu du controlleur le formulaire , va devoir l'afficher.<br>
+            La façon la plus simple de le faire est celle-ci :
+            <br>
+            <pre>
+              {% block body %}
+                {{ form(form) }}
+                  <button type="submit">Enregitrer</button>
+              [% endblock %]
+            </pre>
+          </p>
           
         </div>
       </div>
