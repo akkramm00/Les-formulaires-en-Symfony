@@ -74,9 +74,19 @@
             {
               $builder
                   ->add('title', TextType::class, [
-                    
+                    'attr' => [
+                        'class' => 'form-control mt-3 mb-3'
+                    ],
+                    'label' => 'titre du commentaire',
+                    'required' => true
                   ])
-                  ->add('content', TextareaType::class)
+                  ->add('content', TextareaType::class, [
+                    'attr' => [
+                          'class' => 'form-control mt-3 mb-3',
+                    ],
+                  'label' => 'commentaire' ,
+                  'required' => true
+                  ])
               ;
             
             }
