@@ -91,8 +91,14 @@
             
             }
             }
+
           </pre>
 
+            <h2>configureOptions()</h2>
+          configureOptions() permet de créer un systme d'options avec les options requises, les valeurs par défaut, la validation, la normalisation et plus encore. <br><br>
+
+          Une bonne pratique est de le préciser dans configureOptions() l'entité sur laquelle vous travailler dans le formType. il faudra, comme le montre l'exemple ci-dessous, faire cette déclaration. Meme si cela est optionnel, cela vous évitera des désagréments en cas de code qui se complexifie.
+          
         </div>
       </div>
     </main>
