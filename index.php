@@ -154,6 +154,23 @@
           <p>
             Maintenant , nous voulons que notre application affiche le formulaire. Dans l'exemple ci-dssous, nous mettons dans la variable $form le formuylaire en appelant la méthode creatForm() dans laquelle on passe en argument CommentType. Attention à ne pas oublier de l'importer avec autoloader .         
           </p>
+          <br><br>
+          <pre>
+            #[Route('/comment')]
+            class CommentController extends AbstractController
+            {
+            #[Route('/new', name: 'app_comment_new', methods: ['GET', 'POST'])]
+            {
+            $form = $this->creatForm(CommentType::class);
+            return $this->render('comment.html.Twig', [
+            'form' => $forrm,
+            ])
+            }
+            }
+          </pre>
+          <p>
+            C'est la méthode render() qui va appeler le fichier Twig, qui représente la Vue dans le MVC et qui va  lui transmettre les données voulues, ici le formulaire $form. 
+          </p>
           
         </div>
       </div>
