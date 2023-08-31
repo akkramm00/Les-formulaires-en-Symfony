@@ -54,7 +54,16 @@
             }
           </pre>
           <p>
-            la clase CommentType possède la méthode builForm() dans l'exemple ci dessus. ONn constate également la présence de $builder qui a pour méthode add() avec "title" qui est typé en TextType et "cnotent" qui est typé en TextareaType.
+            la clase CommentType possède la méthode builForm() dans l'exemple ci dessus. ONn constate également la présence de $builder qui a pour méthode add() avec "title" qui est typé en TextType et "cnotent" qui est typé en TextareaType.<br>
+            De méme ,nous venos de créer un formType dans l'exemple ci-dessus "CommentType"que vous pourrez inclure dans d'autres formulaire par la suite. <br> 
+            Le troisième argument de add(), qui est facultatif, est un tableau associatif. Il existe plusieurs options disponibles . Mais parlos des plus utilisés, à savoir "required" et "label" et "attr".
+            <br><br>
+
+            <ul>
+              <li>required: peut etre obligatoitre si le champ de votre entité a l'option non nul, mais le préciser apporte plus de sécurité et permet une bonne lisibilté.</li>
+              <li>label: utilise par défaut le nom de la propriété, mais en l'ajoutant en paramètre vous pouvez personnaliser votre label</li>
+              <li>attr: permet d'attribuer des classes CSS</li>
+            </ul>
           </p>
 
         </div>
