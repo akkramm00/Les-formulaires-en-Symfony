@@ -107,6 +107,11 @@
             ])
             }
           </pre>
+          ==============================================================================================================================
+           <h1>La gestion du formulaire dans le contrôlelur et son affichage</h1>
+          <p>
+            Le controleur joue un role clé dans l'architecture MVC(MOdel-Vue-Controller)de symfony. il va envoyer à la vue le formulaire et va ensuite traiter les informations recueillis lors de la soumisson, du formulaire de l'utilisateur. Découvrons le fonctionnement du controleur, avec quelques exemples de sa gestion d'un formulaire, ainsi que les différentes façons d'utiliser la vue du formulaire dans un fichier twig.
+          </p>
           
         </div>
       </div>
