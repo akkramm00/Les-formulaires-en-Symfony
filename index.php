@@ -5,6 +5,14 @@
 
   </head>
   <body>
+    <header class="container-fluid bg-dark text-light">
+      <div class="row">
+        <div class="col d-flex justify-content-around align-items-center py-3">
+          <a href="index.php" >Formulaires</a>
+          <a href="exercice.php"> Entrainement</a>
+        </div>
+      </div>
+    </header>
     <main class="container">
       <div class="row">
         <div class="col">
