@@ -223,8 +223,27 @@
                  {{ form_end(form) }}
               {% endblock %}
             </pre>
-            
-            
+          <br><br>
+
+          Dans l'exemple ci-dessus, nous avons utilisé "form_row" qui est une combinaison de form_label() et form_widget() et form_errors() que nous n'avons encore traité qui permet d'afficher les erreurs du champ. Vous pouvez notamment utiliser ces fonctions Twig "form_row() " lorsque vous voulez ajouter des options visuelles( CSS, Placeholder, label ) de façon visuelles. <br>
+          Néanmoins, il existe d'autres façons de le faire? comme les form_themes qui sont recommandées par symfony.<br><br>
+
+          Nopus avons vu qu'il est possible d'ajouter des attributs lors de la création d'un formulaire, mais c'est aussi possible de le faire loprs de l'afffichage.
+
+             <pre>
+              {% block body %}
+                 {{ form_start(form) }}
+                    {{ form_row(form.tite) }}
+                    {{ form_row(form.content), {'attr':{'class': 'form-control', 'placeholder', 'Commentaire'}} }}
+                    <button type="submit">Enregistrer</button>
+                 {{ form_end(form) }}
+              {% endblock %}
+            </pre>
+
+          <br><br>
+
+          C'est un choix à faire : on déclare les attributs soit dans le type (ou controleur), soit dans la vue comme dans l'exemple si-dessus. on priconisera l'ajout de toutes les options dans le FormType, pouir faciliter la maintenace dans le temps et respecter les principes KISS, SOLID ds alngages Objets. <br>
+          Lutilité de le déclarer dans la vue peut etre interessante: Par exemple, dans le cas d'un développeur front-end qui s'occupe uniquement des fichiers Twig du projet. Il pourra ajouter des cklasses CSS sans avoir à coder en php.
           </p>
           
         </div>
