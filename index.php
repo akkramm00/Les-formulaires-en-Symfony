@@ -245,6 +245,34 @@
           C'est un choix à faire : on déclare les attributs soit dans le type (ou controleur), soit dans la vue comme dans l'exemple si-dessus. on priconisera l'ajout de toutes les options dans le FormType, pouir faciliter la maintenace dans le temps et respecter les principes KISS, SOLID ds alngages Objets. <br>
           Lutilité de le déclarer dans la vue peut etre interessante: Par exemple, dans le cas d'un développeur front-end qui s'occupe uniquement des fichiers Twig du projet. Il pourra ajouter des cklasses CSS sans avoir à coder en php.
           </p>
+
+          <br><br>
+          <h2>Le traitement des formulaires </h2>
+          <p>
+            Symfony recommande de traiter le formulaire dans la même méthode que le rendu. Voici, dans l'exemple ci-dessous, la méthode new() de CommentController complété pour le traitement des données :
+            
+          </p>
+          <pre>
+            #[Route('/comment')]
+            class CommentController extends abstractController
+            {
+            #[Route('/new', name: 'app_comment_new', methods: ['GET', 'POST'])]
+            public function new(request $request, EntityManagerInterface $em) : response
+               {
+               $comment = new Comment();
+               $form = $this->createForm(CommentType::class);
+               $form-> handlerrsquest($request);
+               if ($form->isSubmited() && form->isValid) {
+                    $em->persist($comment);
+                    $em->flush();
+                    return $this->redirectToRoute('comment_list');
+            }
+            return $this->render('comment.html.Twig', [
+                'form' => $form,
+            ]);
+            }
+            }
+          </pre>
           
         </div>
       </div>
