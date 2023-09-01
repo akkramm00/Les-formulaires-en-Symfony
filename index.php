@@ -273,7 +273,13 @@
             }
             }
           </pre>
-          
+          <br><br>
+
+          <p>
+            Qu'est ce que nous avons fait concrètement? La méthode handlerRequest() va générer le traitement de la saisie du formulaire après soumission de celui-ci par l'utilisateur. Ensuite , nous rentrons la condition conseilllée par symfony qui vérifie si la soumission estbonne et que le formulaire est valide, c'est-à-dire qu'il correspnod à ce qui est attendu, nottament vis-àvis des contraintes de validation qui sont ajoutés pour chaque champ de votre formulaire.<br><br>
+            Dans la condition grace a EntityManager, on met à jour la base de données , piuis on redirige. La redirection est une bonne pratique, car elle evite que l'utilisateur actualise la page. Notez que nous ne parlerons pas de la validation dans le ce cours, car cela mérite un cours à part entière.
+          </p>
+         </div>
         </div>
       </div>
     </main>
