@@ -183,6 +183,29 @@
                   <button type="submit">Enregitrer</button>
               [% endblock %]
             </pre>
+          Notez que le formuylaire passé à twig par le controlleur se nomme "form" mais il aurait pu avoir une autre nomination. Ici la fonctoon form() du composant symfonuy/form, utile pour twig, permet de rendre visuelles les balises  "form" html ainsi que chacuns des champs avec labels. inputs et autres éléments( help, erreurs, etc...)
+          </p>
+          <h3Voici une autre façon de procéder:</h3>
+           <pre>
+             {% block body %}
+                {{ form_start (form) }}
+                   {{ form_labe(form.title)}}
+                   {{ form_widget(form.title)}}
+                   {{ form_labe(form.content)}}
+                   {{ form_widget(form.content)}}
+             <button type="submit">Enregistrer</button>
+                {{ form_end (form) }}
+             {% endblock %}
+           </pre>
+          <br><br>
+
+          <p>
+            Ici le formulaire est plus détaillé, alors il faut commencer le formulaire avce form_start et finir avec form_ennd.<br>
+            Puis, pour chaque champ on met la balise:<br>
+            => form_label(form.nomdechamp) : pour mettre le label. <br>
+            => formwidget(form.nomdechamp) : pour l'input. <br>
+            
+            
           </p>
           
         </div>
