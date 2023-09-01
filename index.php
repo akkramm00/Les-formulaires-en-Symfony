@@ -10,6 +10,8 @@
         <div class="col d-flex justify-content-around align-items-center py-3">
           <a href="index.php" >Formulaires</a>
           <a href="exercice.php"> Entrainement</a>
+          <a href="FormType.php"> FormTypePHP</a>
+          <a href="FormTwig.php"> Form.html.twig</a>
         </div>
       </div>
     </header>
