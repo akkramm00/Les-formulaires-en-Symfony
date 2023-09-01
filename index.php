@@ -204,6 +204,25 @@
             Puis, pour chaque champ on met la balise:<br>
             => form_label(form.nomdechamp) : pour mettre le label. <br>
             => formwidget(form.nomdechamp) : pour l'input. <br>
+
+            Il s'agit dnc d'un exemple court et très simple. Sachez qu'en cas de formulaire avec de nombreux chams, il est possible de commencer l'énumération des champs puis d'appeler avnt le bouton submit la fonction form_reset(form).<br> 
+            Cependant cette méthode n'est pas recommandée, car cela vous oblige à maintenir chacun des champs individuellement (CSS, gestion des erreurs ).<br><br>
+
+            <h2>Astuce</h2>
+            Il est préférable d'empaqueter le plus possible et de rendre visuellement les champs en une seule fois avec la fonction Twig  {{ form(form) }} ou les :<br>
+            {{ form_row(form.champ) }} .<br><br>
+
+            <h3>Exemple</h3>
+
+            <pre>
+              {% block body %}
+                 {{ form_start(form) }}
+                    {{ form_row(form.tite) }}
+                    {{ form_row(form.content) }}
+                    <button type="submit">Enregistrer</button>
+                 {{ form_end(form) }}
+              {% endblock %}
+            </pre>
             
             
           </p>
